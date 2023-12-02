@@ -47,9 +47,8 @@ def day2_part2(fichier):
             for i in range(len(new_bag)):
                 item = new_bag[i].replace("\n","").replace(",","")
                 if item.isalpha():
-                    if item in dico_parti.keys():
-                        if dico_parti[item] < int(new_bag[i-1]):
-                            dico_parti[item] = int(new_bag[i-1])
+                    if item in dico_parti.keys() and dico_parti[item] < int(new_bag[i-1]):
+                        dico_parti[item] = int(new_bag[i-1])
                     else:
                         dico_parti[item] = int(new_bag[i-1])
         return multiplication(dico_parti)
